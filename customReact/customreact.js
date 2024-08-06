@@ -1,32 +1,33 @@
-function customRender(reactElement, container){
+function customRender(reactElement, container)
+{
   /*  const domeElement = document.createElement(reactElement.type)
-    domeElement.innerHTML =reactElement.childern
+    domeElement.innerHTML =reactElement.children
     domeElement.setAttribute('herf',reactElement.props.herf)
     domeElement.setAttribute('target',reactElement.props.target)
 
 container.appendChild(domeElement)
     */
 
-const domeElement = document.createElement(reactElement.type)
-domeElement.innerHTML =reactElement.childern
-for(const prop in reactElement.props) {
+const domeElement = document.createElement(ReactElement.type)
+domeElement.innerHTML =ReactElement.children
+for(const prop in ReactElement.props) {
 if(prop === 'childern' ) continue;
-domeElement.setAttribute(prop,reactElement.props[prop])
+domeElement.setAttribute(prop,ReactElement.props[prop])
 
 }
 container.appendChild(domeElement)
 }
 
-const reactElement = {
-    tyoe : 'a',
+const ReactElement = {
+    type : 'a',  // type of element to create                               
     props:{
-        herf:'https://.google.com',
+        href: 'https://www.google.com/',  // attributes of the element  // can be any string or number      
         target: '_blank'
     }, 
-    childern: 'Click me to visit google'
+    children: 'Click me to visit google'
 }
 
 
 const mainContainer = document.querySelector('#root')
 
-customRender(reactElement,mainContainer)
+customRender(ReactElement,mainContainer)
