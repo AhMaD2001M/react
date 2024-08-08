@@ -7,6 +7,7 @@ function App() {
   
 let counter = 15 
 const addValue = ()=> {
+  console.log("clicked", Math.random() );
  
  counter = counter + 1
   
@@ -14,7 +15,7 @@ const addValue = ()=> {
   return (
     <>
      <h1> ahmad with react boss</h1>
-     <h3> counter value</h3>
+     <h3> counter value: {counter}  </h3>
 
      <button onClick={addValue} > add value </button> <br />
      <button> remove value </button> 
